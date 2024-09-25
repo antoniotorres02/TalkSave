@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import ExpensesTable from './ExpensesTable';
 import ExpensesDialog from './ExpensesDialog';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import ExampleDialog from './ExampleDialog';
 
 interface Expense {
     id: number;
