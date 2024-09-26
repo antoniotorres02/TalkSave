@@ -31,9 +31,11 @@ const ExpensesDialog: React.FC<ExpensesDialogProps> = ({ onAddExpense }) => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setNewExpense(prev => ({ ...prev, [name]: value }));
+        setNewExpense(prev => ({
+            ...prev,
+            [name]: name === 'amount' ? parseFloat(value) : value
+        }));
     };
-
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         onAddExpense(newExpense);
@@ -45,7 +47,7 @@ const ExpensesDialog: React.FC<ExpensesDialogProps> = ({ onAddExpense }) => {
             <DialogTrigger asChild>
                 <Button className="mt-4">Añadir Gasto</Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Añadir Nuevo Gasto</DialogTitle>
                 </DialogHeader>
