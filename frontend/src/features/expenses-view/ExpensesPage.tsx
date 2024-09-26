@@ -1,8 +1,7 @@
 // src/features/expenses-view/ExpensesPage.tsx
 import React, { useState } from 'react';
 import ExpensesTable from './ExpensesTable';
-import ExpensesDialog from './ExpensesDialog';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 
 interface Expense {
     id: number;
@@ -27,20 +26,7 @@ const ExpensesPage: React.FC = () => {
 
     return (
         <>
-            <Card className="mb-6">
-                <CardHeader>
-                    <CardTitle className="text-2xl font-bold">Página de Gastos</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-gray-600">
-                        Aquí puedes ver un resumen de todos tus gastos recientes.
-                    </p>
-                    <ExpensesDialog onAddExpense={handleAddExpense} />
-                </CardContent>
-            </Card>
-
-
-            <ExpensesTable expenses={expenses} />
+            <ExpensesTable expenses={expenses} handleAddExpense={handleAddExpense} />
         </>
     );
 };

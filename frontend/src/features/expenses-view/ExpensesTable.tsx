@@ -8,7 +8,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import ExpensesDialog from './ExpensesDialog';
+import ExpensesVoiceDialog from './ExpensesVoiceDialog';
 
 interface Expense {
   id: number;
@@ -19,9 +21,10 @@ interface Expense {
 
 interface ExpensesTableProps {
   expenses: Expense[];
+  handleAddExpense: (expense: Omit<Expense, "id">) => void;
 }
 
-const ExpensesTable: React.FC<ExpensesTableProps> = ({ expenses }) => {
+const ExpensesTable: React.FC<ExpensesTableProps> = ({ expenses, handleAddExpense }) => {
   const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0);
 
   return (
@@ -50,6 +53,10 @@ const ExpensesTable: React.FC<ExpensesTableProps> = ({ expenses }) => {
         </Table>
         <div className="mt-4 text-right font-bold">
           Total de gastos: ${totalExpenses.toFixed(2)}
+        </div>
+        <div className="flex justify-end gap-2">
+          <ExpensesDialog onAddExpense={handleAddExpense} />
+          <ExpensesVoiceDialog onAddExpense={handleAddExpense} />
         </div>
       </CardContent>
     </Card>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -47,14 +48,17 @@ const ExpensesDialog: React.FC<ExpensesDialogProps> = ({ onAddExpense }) => {
             <DialogTrigger asChild>
                 <Button className="mt-4">Añadir Gasto</Button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className='bg-background text-foreground dark:bg-background dark:text-foreground'>
                 <DialogHeader>
                     <DialogTitle>Añadir Nuevo Gasto</DialogTitle>
                 </DialogHeader>
+                <DialogDescription>
+                    Completa el formulario para añadir un nuevo gasto.
+                </DialogDescription>
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-4 py-4">
                         <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="date" className="text-right">
+                            <Label htmlFor="date" className="text-right font-bold">
                                 Fecha
                             </Label>
                             <Input
@@ -67,7 +71,7 @@ const ExpensesDialog: React.FC<ExpensesDialogProps> = ({ onAddExpense }) => {
                             />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="concept" className="text-right">
+                            <Label htmlFor="concept" className="text-right font-bold">
                                 Concepto
                             </Label>
                             <Input
@@ -79,7 +83,7 @@ const ExpensesDialog: React.FC<ExpensesDialogProps> = ({ onAddExpense }) => {
                             />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="amount" className="text-right">
+                            <Label htmlFor="amount" className="text-right font-bold">
                                 Monto
                             </Label>
                             <Input
