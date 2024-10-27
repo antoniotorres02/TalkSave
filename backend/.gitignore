@@ -1,42 +1,33 @@
-# Ignorar el entorno virtual
-.venv/
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Archivos de compilación de Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Archivos de configuración de IDE
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
 .vscode/
-.idea/
-*.swp
-*.swo
-
-# Archivos de configuración de entornos
-*.env
-*.env.local
-
-# Archivos de logs
-*.log
-
-# Archivos del sistema
-.DS_Store
-Thumbs.db
-
-# Archivos de caché de Python
-pip-wheel-metadata/
-*.egg-info/
-
-# Otros archivos a ignorar
-*.sqlite3
-.Python
-
-# Datos de pruebas
-.test/
-tests/__pycache__/
