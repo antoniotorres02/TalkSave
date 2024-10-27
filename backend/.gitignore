@@ -1,0 +1,42 @@
+# Ignorar el entorno virtual
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de compilación de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de configuración de entornos
+*.env
+*.env.local
+
+# Archivos de logs
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de caché de Python
+pip-wheel-metadata/
+*.egg-info/
+
+# Otros archivos a ignorar
+*.sqlite3
+.Python
+
+# Datos de pruebas
+.test/
+tests/__pycache__/
